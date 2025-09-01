@@ -59,13 +59,13 @@ const Index = () => {
 
         <TabsContent value="overview" className="space-y-4">
           <div className="grid gap-4">
-            <Card className="bg-gradient-primary text-white">
+            <Card className="bg-slate-800 text-white">
               <CardHeader className="pb-3">
-                <CardTitle className="text-lg">Общий баланс</CardTitle>
+                <CardTitle className="text-lg text-slate-200">Общий баланс</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-3xl font-bold">{formatCurrency(balance)}</p>
-                <p className="text-white/80 text-sm mt-1">+{formatCurrency(monthlyIncome - monthlyExpenses)} в этом месяце</p>
+                <p className="text-slate-300 text-sm mt-1">+{formatCurrency(monthlyIncome - monthlyExpenses)} в этом месяце</p>
               </CardContent>
             </Card>
 
@@ -73,26 +73,26 @@ const Index = () => {
               <Card>
                 <CardHeader className="pb-3">
                   <div className="flex items-center space-x-2">
-                    <Icon name="TrendingUp" className="h-4 w-4 text-secondary" />
+                    <Icon name="TrendingUp" className="h-4 w-4 text-emerald-600" />
                     <CardTitle className="text-sm">Доходы</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-xl font-semibold text-secondary">{formatCurrency(monthlyIncome)}</p>
-                  <p className="text-xs text-muted-foreground">за февраль</p>
+                  <p className="text-xl font-semibold text-emerald-600">{formatCurrency(monthlyIncome)}</p>
+                  <p className="text-xs text-slate-500">за февраль</p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader className="pb-3">
                   <div className="flex items-center space-x-2">
-                    <Icon name="TrendingDown" className="h-4 w-4 text-destructive" />
+                    <Icon name="TrendingDown" className="h-4 w-4 text-red-600" />
                     <CardTitle className="text-sm">Расходы</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-xl font-semibold text-destructive">{formatCurrency(monthlyExpenses)}</p>
-                  <p className="text-xs text-muted-foreground">за февраль</p>
+                  <p className="text-xl font-semibold text-red-600">{formatCurrency(monthlyExpenses)}</p>
+                  <p className="text-xs text-slate-500">за февраль</p>
                 </CardContent>
               </Card>
             </div>
@@ -101,26 +101,26 @@ const Index = () => {
               <Card>
                 <CardHeader className="pb-3">
                   <div className="flex items-center space-x-2">
-                    <Icon name="PiggyBank" className="h-4 w-4 text-accent" />
+                    <Icon name="PiggyBank" className="h-4 w-4 text-blue-600" />
                     <CardTitle className="text-sm">Накопления</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-xl font-semibold">{formatCurrency(savings)}</p>
-                  <p className="text-xs text-muted-foreground">3 счета</p>
+                  <p className="text-xl font-semibold text-slate-800">{formatCurrency(savings)}</p>
+                  <p className="text-xs text-slate-500">3 счета</p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader className="pb-3">
                   <div className="flex items-center space-x-2">
-                    <Icon name="LineChart" className="h-4 w-4 text-primary" />
+                    <Icon name="LineChart" className="h-4 w-4 text-slate-600" />
                     <CardTitle className="text-sm">Инвестиции</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-xl font-semibold">{formatCurrency(investments)}</p>
-                  <p className="text-xs text-secondary">+3.2% за месяц</p>
+                  <p className="text-xl font-semibold text-slate-800">{formatCurrency(investments)}</p>
+                  <p className="text-xs text-emerald-600">+3.2% за месяц</p>
                 </CardContent>
               </Card>
             </div>
@@ -129,11 +129,11 @@ const Index = () => {
 
         <TabsContent value="transactions" className="space-y-4">
           <div className="flex space-x-2 mb-4">
-            <Button className="flex-1 bg-secondary hover:bg-secondary/90">
+            <Button className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white">
               <Icon name="Plus" className="h-4 w-4 mr-2" />
               Доход
             </Button>
-            <Button variant="outline" className="flex-1">
+            <Button variant="outline" className="flex-1 border-red-200 text-red-600 hover:bg-red-50">
               <Icon name="Minus" className="h-4 w-4 mr-2" />
               Расход
             </Button>
@@ -153,7 +153,7 @@ const Index = () => {
                       </div>
                       <p className="text-sm text-muted-foreground">{transaction.description}</p>
                     </div>
-                    <p className={`font-semibold ${transaction.type === 'income' ? 'text-secondary' : 'text-destructive'}`}>
+                    <p className={`font-semibold ${transaction.type === 'income' ? 'text-emerald-600' : 'text-red-600'}`}>
                       {transaction.type === 'income' ? '+' : ''}{formatCurrency(transaction.amount)}
                     </p>
                   </div>
@@ -187,11 +187,11 @@ const Index = () => {
                     </p>
                   </div>
                   <div className="flex space-x-2 mt-4">
-                    <Button size="sm" variant="outline" className="flex-1">
+                    <Button size="sm" variant="outline" className="flex-1 border-emerald-200 text-emerald-600 hover:bg-emerald-50">
                       <Icon name="Plus" className="h-3 w-3 mr-1" />
                       Пополнить
                     </Button>
-                    <Button size="sm" variant="outline" className="flex-1">
+                    <Button size="sm" variant="outline" className="flex-1 border-slate-200 text-slate-600 hover:bg-slate-50">
                       <Icon name="Minus" className="h-3 w-3 mr-1" />
                       Снять
                     </Button>
@@ -231,12 +231,15 @@ const Index = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-slate-50">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-40">
+      <header className="bg-white border-b border-slate-200 sticky top-0 z-40 business-shadow">
         <div className="flex items-center justify-between px-6 py-4">
           <div className="flex items-center space-x-4">
-            <h1 className="text-2xl font-bold gradient-text">Fintica</h1>
+            <h1 className="text-2xl font-bold text-slate-800">Fintica</h1>
+            <Badge variant="outline" className="text-xs font-medium bg-slate-100 text-slate-600 border-slate-300">
+              Professional
+            </Badge>
           </div>
           
           <div className="flex items-center space-x-4">
@@ -256,7 +259,7 @@ const Index = () => {
             
             <Avatar>
               <AvatarImage src="" />
-              <AvatarFallback className="bg-gradient-primary text-white">ЮР</AvatarFallback>
+              <AvatarFallback className="bg-slate-600 text-white font-medium">ЮР</AvatarFallback>
             </Avatar>
           </div>
         </div>
@@ -265,61 +268,61 @@ const Index = () => {
       {/* Main Dashboard */}
       <main className="container mx-auto px-6 py-8">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold mb-2">Добро пожаловать в Fintica!</h2>
-          <p className="text-muted-foreground">Управляйте своими финансами легко и эффективно</p>
+          <h2 className="text-3xl font-bold text-slate-800 mb-2">Финансовая панель управления</h2>
+          <p className="text-slate-600">Профессиональные инструменты для управления капиталом</p>
         </div>
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <Card className="bg-gradient-primary text-white hover-scale">
+          <Card className="bg-slate-800 text-white hover-scale business-shadow">
             <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-white/80">Общий баланс</CardTitle>
+              <CardTitle className="text-sm font-medium text-slate-300">Общий баланс</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-2xl font-bold">{formatCurrency(balance)}</p>
-              <p className="text-white/80 text-xs">
+              <p className="text-slate-300 text-xs">
                 <Icon name="TrendingUp" className="h-3 w-3 inline mr-1" />
                 +{formatCurrency(monthlyIncome - monthlyExpenses)} за месяц
               </p>
             </CardContent>
           </Card>
 
-          <Card className="hover-scale">
+          <Card className="hover-scale business-shadow">
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
-                <CardTitle className="text-sm font-medium text-muted-foreground">Доходы</CardTitle>
-                <Icon name="ArrowUpRight" className="h-4 w-4 text-secondary" />
+                <CardTitle className="text-sm font-medium text-slate-600">Доходы</CardTitle>
+                <Icon name="ArrowUpRight" className="h-4 w-4 text-emerald-600" />
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-secondary">{formatCurrency(monthlyIncome)}</p>
-              <p className="text-muted-foreground text-xs">За февраль 2025</p>
+              <p className="text-2xl font-bold text-emerald-600">{formatCurrency(monthlyIncome)}</p>
+              <p className="text-slate-500 text-xs">За февраль 2025</p>
             </CardContent>
           </Card>
 
-          <Card className="hover-scale">
+          <Card className="hover-scale business-shadow">
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
-                <CardTitle className="text-sm font-medium text-muted-foreground">Расходы</CardTitle>
-                <Icon name="ArrowDownRight" className="h-4 w-4 text-destructive" />
+                <CardTitle className="text-sm font-medium text-slate-600">Расходы</CardTitle>
+                <Icon name="ArrowDownRight" className="h-4 w-4 text-red-600" />
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-destructive">{formatCurrency(monthlyExpenses)}</p>
-              <p className="text-muted-foreground text-xs">За февраль 2025</p>
+              <p className="text-2xl font-bold text-red-600">{formatCurrency(monthlyExpenses)}</p>
+              <p className="text-slate-500 text-xs">За февраль 2025</p>
             </CardContent>
           </Card>
 
-          <Card className="hover-scale">
+          <Card className="hover-scale business-shadow">
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
-                <CardTitle className="text-sm font-medium text-muted-foreground">Инвестиции</CardTitle>
-                <Icon name="TrendingUp" className="h-4 w-4 text-accent" />
+                <CardTitle className="text-sm font-medium text-slate-600">Инвестиции</CardTitle>
+                <Icon name="TrendingUp" className="h-4 w-4 text-blue-600" />
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold">{formatCurrency(investments)}</p>
-              <p className="text-secondary text-xs font-medium">+3.2% доходность</p>
+              <p className="text-2xl font-bold text-slate-800">{formatCurrency(investments)}</p>
+              <p className="text-emerald-600 text-xs font-medium">+3.2% доходность</p>
             </CardContent>
           </Card>
         </div>
@@ -352,7 +355,7 @@ const Index = () => {
                         <p className="text-sm text-muted-foreground">{transaction.category} • {transaction.date}</p>
                       </div>
                     </div>
-                    <p className={`font-semibold ${transaction.type === 'income' ? 'text-secondary' : 'text-destructive'}`}>
+                    <p className={`font-semibold ${transaction.type === 'income' ? 'text-emerald-600' : 'text-red-600'}`}>
                       {transaction.type === 'income' ? '+' : ''}{formatCurrency(transaction.amount)}
                     </p>
                   </div>

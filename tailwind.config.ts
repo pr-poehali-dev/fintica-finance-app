@@ -19,9 +19,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'sans': ['Montserrat', 'Open Sans', 'system-ui', 'sans-serif'],
-				'display': ['Montserrat', 'system-ui', 'sans-serif'],
-				'body': ['Open Sans', 'system-ui', 'sans-serif'],
+				'sans': ['Source Sans Pro', 'system-ui', 'sans-serif'],
+				'display': ['Source Sans Pro', 'system-ui', 'sans-serif'],
+				'body': ['Source Sans Pro', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -30,44 +30,53 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#6366F1',
+					DEFAULT: '#1E293B',
 					foreground: '#FFFFFF',
-					50: '#EEF2FF',
-					100: '#E0E7FF',
-					500: '#6366F1',
-					600: '#4F46E5',
-					900: '#312E81',
+					50: '#F8FAFC',
+					100: '#F1F5F9',
+					500: '#64748B',
+					600: '#475569',
+					900: '#0F172A',
 				},
 				secondary: {
-					DEFAULT: '#10B981',
+					DEFAULT: '#059669',
 					foreground: '#FFFFFF',
 				},
 				accent: {
-					DEFAULT: '#F59E0B',
+					DEFAULT: '#0369A1',
 					foreground: '#FFFFFF',
 				},
 				destructive: {
-					DEFAULT: '#EF4444',
+					DEFAULT: '#DC2626',
 					foreground: '#FFFFFF'
 				},
 				muted: {
-					DEFAULT: '#F3F4F6',
-					foreground: '#6B7280'
+					DEFAULT: '#F8FAFC',
+					foreground: '#64748B'
 				},
 				card: {
 					DEFAULT: '#FFFFFF',
-					foreground: '#1F2937'
+					foreground: '#1E293B'
 				},
 				popover: {
 					DEFAULT: '#FFFFFF',
-					foreground: '#1F2937'
+					foreground: '#1E293B'
 				},
 				fintech: {
-					primary: '#6366F1',
-					secondary: '#10B981',
-					accent: '#F59E0B',
-					danger: '#EF4444',
-					gray: '#1F2937',
+					primary: '#1E293B',
+					secondary: '#059669',
+					accent: '#0369A1',
+					danger: '#DC2626',
+					gray: '#64748B',
+				},
+				business: {
+					dark: '#1E293B',
+					gray: '#64748B',
+					light: '#F8FAFC',
+					success: '#059669',
+					warning: '#D97706',
+					error: '#DC2626',
+					info: '#0369A1',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -81,9 +90,10 @@ export default {
 				}
 			},
 			backgroundImage: {
-				'gradient-primary': 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)',
-				'gradient-secondary': 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
-				'gradient-accent': 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)',
+				'gradient-primary': 'linear-gradient(135deg, #1E293B 0%, #334155 100%)',
+				'gradient-secondary': 'linear-gradient(135deg, #059669 0%, #047857 100%)',
+				'gradient-accent': 'linear-gradient(135deg, #0369A1 0%, #0284C7 100%)',
+				'gradient-subtle': 'linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

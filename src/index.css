@@ -98,7 +98,7 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-gray-50 to-gray-100 text-foreground font-body;
+    @apply bg-slate-50 text-slate-800 font-body;
   }
 
   h1,
@@ -118,5 +118,17 @@
 
   .gradient-text {
     @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+
+  .business-shadow {
+    box-shadow:
+      0 1px 3px 0 rgb(0 0 0 / 0.1),
+      0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+
+  .business-shadow-lg {
+    box-shadow:
+      0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
   }
 }
